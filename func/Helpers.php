@@ -13,3 +13,15 @@ function saudacao(){// define o tipo de retorno
         return 'Boa madrugada';
     }
 }
+
+function resumirTexto(string $texto, int $limite, string $continue='...'){
+    $texto__limpo = trim(strip_tags($texto));
+
+    if(mb_strlen($texto__limpo)<= $limite){
+        return $texto__limpo;
+    }
+
+    $resumirTexto = mb_substr($texto__limpo, 0, mb_strpos(mb_substr($texto__limpo, 0, $limite), ''));
+
+    return $resumirTexto . $continue;
+}
