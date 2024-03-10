@@ -2,11 +2,11 @@
 
 require 'ContaCorrente.php';
 
-$conta_corrente = new ContaCorrente('Rodney', 10000, 200, 100);
-$conta_corrente->depositar(200);
-$conta_corrente->sacar(1000);
+$conta_corrente = new ContaCorrente
+('Rodney', 1000, 2000, 500);
+
+$conta_corrente->depositar(400);
 $conta_corrente->gerarExtrato();
-$conta_corrente->criarHistoricoArquivo();
+/* $conta_corrente->criarHistoricoArquivo(); */
 
 echo "<pre>";
-print_r($conta_corrente);

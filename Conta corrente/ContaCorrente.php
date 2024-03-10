@@ -15,24 +15,21 @@ class ContaCorrente{
     }
     public function depositar(float $valor):float
     {
-        if($this->saldoDevendo>0){
+        $expressaaMove = 0;
+        if($this->saldoDevendo>=0){
             $result = $valor - $this->saldoDevendo;
-            if($result>0){
+            if($result>=0){
                 $this->chequeEspecial += $this->saldoDevendo;
+                $expressaoMove = $this->saldo+=$valor - $this->saldoDevendo;
                 $this->saldoDevendo = 0;
-                $this->saldo+=$valor;
-                $this->inserirMovimentacao($this->saldo+=$valor);
             }else{
-                $this->chequeEspecial += $valor;
-                $this->saldoDevendo-= $valor;
-                $this->saldo=0;
-                $this->inserirMovimentacao($this->chequeEspecial+=$valor);
-                $this->inserirMovimentacao($this->saldoDevendo-=$valor);
+                $expressaoMove = $this->chequeEspecial += $valor;
+                $expressaoMove = $this->saldoDevendo-= $valor;
             }
         }else{
-            $this->saldo+= $valor;
-            $this->inserirMovimentacao($this->saldo+=$valor);
+            $expressaaMove = $this->saldo+= $valor;
         }
+        $this->inserirMovimentacao($expressaaMove);
         return  $this->saldo;
     }
 
@@ -40,20 +37,20 @@ class ContaCorrente{
     {
         $valor_max = $this->saldo+ $this->chequeEspecial;
         $valorDef = ($valor> $this->saldo)? 'UseCheque': 'NoUseCheque';
+        $expressaoMove = 0;
 
         if($valor> $valor_max){
             echo 'ERROR! Saldo insuficiente';
         }else{
             if($valorDef=='UseCheque'){
-                $this->chequeEspecial -= $valor-$this->saldo;
+                $expressaoMove = $this->chequeEspecial -= $valor-$this->saldo;
                 $this->saldo= 0;
-                $this->inserirMovimentacao($this->chequeEspecial-=$valor-$this->saldo);
             }else if($valorDef=='NoUseCheque'){
-                $this->saldo-= $valor;
-                $this->inserirMovimentacao( $this->saldo -= $valor);
+                $expressaoMove = $this->saldo-= $valor;
             }
         }
-        return $this->saldo;
+        $this->inserirMovimentacao($expressaoMove);
+        return $this->saldo;    
     }
 
     public function gerarExtrato(){
@@ -76,10 +73,10 @@ class ContaCorrente{
         return $this->movimentacoes[] = "{$data} {$expressao} - Titular:{$this->titular}" . PHP_EOL;
     }
 
-    public function criarHistoricoArquivo(){
+    /* public function criarHistoricoArquivo(){
         $arquivoNome = 'historico.txt';
         $arquivoConteudo = $this->movimentacoes;
         fopen($arquivoNome, 'a+');
         file_put_contents($arquivoNome, $arquivoConteudo);
-    }
+    } */
 }
