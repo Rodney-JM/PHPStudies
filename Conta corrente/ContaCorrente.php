@@ -69,7 +69,8 @@ class ContaCorrente{
     } 
  */
     public function inserirMovimentacao($expressao){
-        $data = date('F j, Y, g:i a');
+        $dataAgora = date('F j, Y, g:i a');
+        $data = '';
         return $this->movimentacoes[] = "{$data} {$expressao} - Titular:{$this->titular}" . PHP_EOL;
     }
 
