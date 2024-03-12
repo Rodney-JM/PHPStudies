@@ -1,6 +1,6 @@
-Há 45 minutos, Foi subtraido do saldo pelo saque resultando em 700 - Titular:Rodney
-Há 45 minutos, Foi adicionado do Cheque Especial pelo deposito resultando em 200 - Titular:Rodney
-Há 45 minutos, Foi subtraido do saldo pelo saque resultando em 400 - Titular:Rodney
-Há 45 minutos, Foi adicionado do saldo pelo deposito resultando em 500 - Titular:Rodney
-Há 45 minutos, Foi subtraido do saldo pelo saque resultando em 200 - Titular:Rodney
-Há 45 minutos, Foi adicionado do saldo pelo deposito resultando em 500 - Titular:Rodney
+Há uma hora, Foi subtraido do saldo pelo saque resultando em 700 - Titular : Rodney
+Há uma hora, Foi adicionado do Cheque Especial pelo deposito resultando em 200 - Titular : Rodney
+Há uma hora, Foi subtraido do saldo pelo saque resultando em 400 - Titular : Rodney
+Há uma hora, Foi adicionado do saldo pelo deposito resultando em 500 - Titular : Rodney
+Há uma hora, Foi subtraido do saldo pelo saque resultando em 200 - Titular : Rodney
+Há uma hora, Foi adicionado do saldo pelo deposito resultando em 500 - Titular : Rodney
